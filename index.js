@@ -42,7 +42,7 @@ app.use('/', authRouter)
 
 
 app.get('/',(request, response) => {
-response.sendFile(path.join(__dirname,'../public', 'home.html'));
+response.sendFile(path.join(__dirname,'./public', 'home.html'));
 console.log(__dirname)
 })
 
