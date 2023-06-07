@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Application</title>
+  <link rel="stylesheet" type="text/css" href="formpage.css">
+</head>
+<body>
+  <form class="job-application-form">
+    <h2>Job Application</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="job-role">Job Role:</label>
+        <select id="job-role" name="job-role" required>
+          <option value="">Select a role</option>
+          <option value="role1">Role 1</option>
+          <option value="role2">Role 2</option>
+          <option value="role3">Role 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="pincode">Pin Code:</label>
+        <input type="text" id="pincode" name="pincode" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="cv">Upload your CV:</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <button type="submit">Apply Now</button>
+    </div>
+  </form>
+</body>
+</html>

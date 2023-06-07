@@ -1,5 +1,6 @@
 const express = require ('express')
 const mongoose = require ('mongoose')
+const path = require('path')
 const dotenv = require('dotenv')
 dotenv.config()
 
@@ -25,7 +26,10 @@ app.use('/css', (req, res, next) => {
   });
   
   // Serve static files
-app.use('/css', express.static('public/css'));
+app.use('/', express.static('/Users/vaibhav/Desktop/NaukariPortal/public'));
+
+
+
   
 
 
@@ -35,14 +39,29 @@ app.use(cookieParser())
 //app.use('/', jobsRouter)
 app.use('/', authRouter)
 
+const authController = require('./controllers/authcontroller');
+app.get('/signup', authcontroller.signup);
+app.post('/signup', authcontroller.signup);
+
+// Route: Login
+app.get('/index', authcontroller.login);
+app.post('/login', authcontroller.login);
+
+// Route: Logout
+app.get('/logout',authcontroller.logout);
+
+
 app.get('/',(request, response) => {
-response.sendFile('/Users/vaibhav/Desktop/NaukariPortal/public/index.html')
+response.sendFile('/Users/vaibhav/Desktop/NaukariPortal/public/home.html')
+response.sendFile(path.join(__dirname,'../public', 'home.html'));
 })
 
 app.get('/jobs.html',(request, response) => {
     console.log("request for jobs")
     response.sendFile('/Users/vaibhav/Desktop/NaukariPortal/public/html/jobs.html')
 });
+
+
     
 
 app.listen(8000, () => {
