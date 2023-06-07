@@ -39,16 +39,6 @@ app.use(cookieParser())
 //app.use('/', jobsRouter)
 app.use('/', authRouter)
 
-const authController = require('./controllers/authcontroller');
-app.get('/signup', authcontroller.signup);
-app.post('/signup', authcontroller.signup);
-
-// Route: Login
-app.get('/index', authcontroller.login);
-app.post('/login', authcontroller.login);
-
-// Route: Logout
-app.get('/logout',authcontroller.logout);
 
 
 app.get('/',(request, response) => {
@@ -62,7 +52,7 @@ app.get('/jobs.html',(request, response) => {
 });
 
 
-    
+
 
 app.listen(8000, () => {
     console.log("Server Successfully Started")
