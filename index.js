@@ -2,6 +2,7 @@ const express = require ('express')
 const mongoose = require ('mongoose')
 const path = require('path')
 const dotenv = require('dotenv')
+const {signup, login, logout} = require('./controllers/authcontroller')
 dotenv.config()
 
 const cookieParser = require('cookie-parser')
@@ -52,9 +53,9 @@ app.get('/jobs.html',(request, response) => {
 });
 
 
+const PORT = process.env.PORT || 8001;
 
-
-app.listen(8000, () => {
+app.listen(PORT, () => {
     console.log("Server Successfully Started")
 })
 
