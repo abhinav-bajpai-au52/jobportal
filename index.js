@@ -43,12 +43,13 @@ app.use('/', authRouter)
 
 app.get('/',(request, response) => {
 response.sendFile(path.join(__dirname,'../public', 'home.html'));
+console.log(__dirname)
 })
 
-app.get('/jobs.html',(request, response) => {
-    console.log("request for jobs")
-    response.sendFile('/Users/vaibhav/Desktop/NaukariPortal/public/html/jobs.html')
-});
+// app.get('/jobs.html',(request, response) => {
+//     console.log("request for jobs")
+//     response.sendFile('/Users/vaibhav/Desktop/NaukariPortal/public/html/jobs.html')
+// });
 
 
 const PORT = process.env.PORT || 8000;
